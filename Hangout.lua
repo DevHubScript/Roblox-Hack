@@ -60,6 +60,11 @@ Main2:AddToggle("Teleport",_G.Goto2,function(value2)
     _G.Goto2 = value2
     if _G.Goto2 == false then
         TW(game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+        NoClip = false
+        SmoothTween = false
+    else
+        NoClip = true
+        SmoothTween = true
     end
 end)
 Main2:AddToggle("Wall Hack",NoClip1,function(value2)
@@ -114,6 +119,16 @@ spawn(function()
     while wait() do
         if _G.Goto2 and game.Workspace:FindFirstChild(playerlist) and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             TW(game.Workspace:FindFirstChild(playerlist).HumanoidRootPart.CFrame)
+        end
+    end
+end)
+
+spawn(function()
+    while wait() do
+        if SmoothTween then
+            game.Workspace.Gravity = 0
+        else
+            game.Workspace.Gravity = 196.2
         end
     end
 end)
