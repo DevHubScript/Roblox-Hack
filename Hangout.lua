@@ -73,7 +73,7 @@ end)
 Main2:AddToggle("Spectate",Spectate,function(spectate1)
     Spectate = spectate1
     local myself = game.Players.LocalPlayer.Character.Humanoid
-    local spectateplayer = game.Players:FindFirstChild(playername)
+    local spectateplayer = game.Players:FindFirstChild(playerlist)
     repeat wait (0.1)
         game.Workspace.Camera.CameraSubject = spectateplayer.Character.Humanoid
     until Spectate == false
